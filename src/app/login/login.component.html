@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+
+<div id="mainDiv">
+  <div style="height: 90vh; display: flex; align-items: center">
+    <div class="registration-form">
+      <h2>Log In</h2>
+      <form #registrationForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="user.email"
+            required
+            email
+          />
+          <!-- <div *ngIf="email.invalid && (email.dirty || email.touched)">
+              <div *ngIf="email.errors.required">Email is required.</div>
+              <div *ngIf="email.errors.email">Enter a valid email address.</div>
+            </div> -->
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="user.password"
+            required
+            minlength="6"
+          />
+          <!-- <div *ngIf="password.invalid && (password.dirty || password.touched)">
+              <div *ngIf="password.errors.required">Password is required.</div>
+              <div *ngIf="password.errors.minlength">
+                Password must be at least 6 characters long.
+              </div>
+            </div> -->
+        </div>
+
+        <button type="submit">Submit</button>
+        <a class="nav-link" routerLink="/signup"
+          >Don't have an account? Signup</a
+        >
+
+        <div *ngIf="isSubmitted" class="success-message">
+          Registration successful! Thank you for signing up.
+        </div>
+        <div class="success-message">{{ msg }}</div>
+      </form>
+    </div>
+  </div>
+</div>

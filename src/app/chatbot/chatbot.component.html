@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div id="main">
+  <div id="heading">
+    <h1>Welcome to the Chatbot Service</h1>
+    <div id="output">
+      <p>
+        I am here to asist you in finding books, authors, and providing
+        personalized recommendations.
+      </p>
+      <br />
+      <p *ngFor="let message of msg">
+        {{ message }}
+      </p>
+      <div *ngIf="loading" class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <div id="chat">
+      <input type="text" [(ngModel)]="input" placeholder="Chat here..." />
+      <button (click)="onSubmit()">Send</button>
+    </div>
+  </div>
+</div>

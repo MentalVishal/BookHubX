@@ -1,0 +1,50 @@
+#heading h1 {
+  margin: 2%;
+  text-align: center;
+  color: rgb(188, 134, 35);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#output {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  margin: auto;
+  padding: 1%;
+  font-size: 1.2rem;
+  color: rgb(104, 76, 76);
+  width: 80%;
+  height: 50vh;
+  overflow: scroll;
+}
+
+#chat {
+  width: 70%;
+  margin: auto;
+  margin-top: 2%;
+}
+
+button {
+  padding: 1%;
+  font-size: 1.2rem;
+  color: rgb(104, 76, 76);
+  border: none;
+  border-radius: 3px;
+  background-color: brown;
+  color: white;
+}
+button:hover {
+  background-color: rgb(250, 41, 41);
+  color: rgb(255, 255, 255);
+}
+
+input {
+  width: 90%;
+  border-radius: 5px;
+  margin: auto;
+  padding: 1%;
+  border: none;
+  font-size: 1.2rem;
+  color: rgb(104, 76, 76);
+}

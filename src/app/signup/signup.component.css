@@ -1,0 +1,71 @@
+.registration-form {
+  width: 70%;
+  margin: auto;
+  align-content: center;
+  padding: 20px 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(132, 108, 78);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  margin-left: 6%;
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  margin: auto;
+  margin-left: 6%;
+}
+
+button {
+  display: block;
+  width: 60%;
+  margin: auto;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.success-message {
+  margin-left: 6%;
+  margin-top: 10px;
+  color: #28a745;
+  font-weight: bold;
+}
+a {
+  width: 60%;
+  margin: auto;
+  color: blue;
+}
+#mainDiv {
+  height: 93.1vh;
+  background-image: url(./image/login.jpg);
+  background-position: center;
+  background-size: cover;
+}

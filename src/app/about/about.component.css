@@ -1,0 +1,47 @@
+/* about.component.css */
+.about-page {
+  background-color: #f5f5f5;
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content {
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.founders-section {
+  margin-top: 30px;
+}
+
+h3 {
+  color: #333;
+}
+
+.founder {
+  margin-top: 20px;
+}
+
+.founder img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.founder p {
+  font-weight: bold;
+  color: #555;
+}

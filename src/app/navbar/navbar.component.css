@@ -1,0 +1,21 @@
+#bookhub {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: red;
+  font-weight: 700;
+  margin-left: 10%;
+  font-size: 1.5rem;
+}
+
+#navbarNav {
+  margin-left: 20%;
+}
+li {
+  color: black;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-left: 10%;
+}
+
+#navbar {
+  background-color: rgb(221, 210, 232);
+}
