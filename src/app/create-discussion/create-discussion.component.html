@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+
+<!-- your-component.component.html -->
+<div id="heading">
+  <div id="first">
+    <h1>Welcome to the Community Discussions</h1>
+  </div>
+</div>
+<!-- your-component.component.html -->
+
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ title }}</h5>
+      <p class="card-text">{{ content }}</p>
+      <p class="card-subtitle text-muted">Posted by {{ userName }}</p>
+    </div>
+  </div>
+
+  <!-- Create a new discussion form -->
+  <!-- your-component.component.html -->
+
+  <form (ngSubmit)="createDiscussion()" class="mt-4">
+    <div class="mb-3">
+      <label for="discussionTitle" class="form-label">Discussion Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="discussionTitle"
+        name="discussionTitle"
+        [(ngModel)]="title"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="discussionContent" class="form-label"
+        >Discussion Content</label
+      >
+      <textarea
+        class="form-control"
+        id="discussionContent"
+        name="discussionContent"
+        [(ngModel)]="content"
+        required
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Discussion</button>
+  </form>
+</div>

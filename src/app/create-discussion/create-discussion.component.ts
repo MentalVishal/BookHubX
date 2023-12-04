@@ -9,14 +9,11 @@ import {
   HttpHeaders,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FooterComponent } from '../footer/footer.component';
 
 @Component({
-  selector: 'app-book',
+  selector: 'app-create-discussion',
   standalone: true,
   imports: [
-    CommonModule,
-    FooterComponent,
     CommonModule,
     NavbarComponent,
     FormsModule,
@@ -24,39 +21,43 @@ import { FooterComponent } from '../footer/footer.component';
     RouterModule,
     HttpClientModule,
   ],
-  templateUrl: './book.component.html',
-  styleUrl: './book.component.css',
+  templateUrl: './create-discussion.component.html',
+  styleUrl: './create-discussion.component.css',
 })
-export class BookComponent {
+export class CreateDiscussionComponent {
+  title: string = '';
+  content: string = '';
   userId = localStorage.getItem('Id'); // Add your user ID logic here
   userName = localStorage.getItem('Name');
   token = localStorage.getItem('Token');
-  books: any[] = [];
-  loading = false;
 
-  private apiUrl = 'https://backend-bookhubx.onrender.com/book';
+  private apiUrl = 'https://backend-bookhubx.onrender.com/discussion/create';
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  ngOnInit() {
+  createDiscussion() {
     const headers = new HttpHeaders().set(
       'Authorization',
       `Bearer ${this.token}`
     );
-    this.loading = true;
+
     this.http
-      .get(
+      .post(
         this.apiUrl,
-
+        {
+          title: this.title,
+          content: this.content,
+          userId: this.userId,
+          userName: this.userName,
+        },
         { headers }
       )
       .subscribe(
         (data: any) => {
           // Handle the data returned from the API
           console.log(data);
-          this.books = data.AllBook;
-          this.loading = false;
-
+          alert('Discussion Created Sucessfull');
+          this.router.navigate(['/discussion']);
           // Now you can use the 'data' variable to work with the received data
         },
         (error) => {
@@ -64,40 +65,5 @@ export class BookComponent {
           console.error('HTTP error:', error);
         }
       );
-  }
-  isAdminUser(): boolean {
-    if (this.userName === 'admin') {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  deleteBook(book: any): void {
-    const headers = new HttpHeaders().set(
-      'Authorization',
-      `Bearer ${this.token}`
-    );
-
-    this.http
-      .delete(
-        `${this.apiUrl}/delete/${book._id}`,
-
-        { headers }
-      )
-      .subscribe(
-        (data: any) => {
-          // Handle the data returned from the API
-          console.log(data);
-          this.books = this.books.filter((el) => el._id !== book._id);
-
-          // Now you can use the 'data' variable to work with the received data
-        },
-        (error) => {
-          // Handle any errors that occurred during the request
-          console.error('HTTP error:', error);
-        }
-      );
-    console.log('Delete book:', book);
   }
 }

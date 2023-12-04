@@ -3,5 +3,36 @@
   <div id="first">
     <h1>Welcome to the Community Discussions</h1>
   </div>
-  <div id="second"><button id="Create">Create</button></div>
+  <div (click)="create()" id="second"><button id="Create">Create</button></div>
 </div>
+
+<div id="loading" *ngIf="loading">
+  <h1>Loading...</h1>
+</div>
+
+<div *ngFor="let discussions of allDiscussion">
+  <!-- your-component.component.html -->
+
+  <div id="maindiv" class="container mt-4">
+    <div class="card" (click)="navigateToDiscussion(discussions._id)">
+      <div class="card-header">
+        <h5 class="card-title">{{ discussions.title }}</h5>
+        <p class="card-text">{{ discussions.content }}</p>
+        <p class="card-subtitle text-muted">
+          Posted by {{ discussions.userName }}
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li
+          *ngFor="let message of discussions.messages"
+          class="list-group-item"
+        >
+          <strong>{{ message.userName }}</strong
+          >: {{ message.text }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<br /><br /><br /><br />
+<app-footer></app-footer>

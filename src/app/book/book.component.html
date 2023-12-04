@@ -1,3 +1,47 @@
 <app-navbar></app-navbar>
-<p>book works!</p>
+
+<!-- book.component.html -->
+
+<div id="heading">
+  <div id="first">
+    <h1>Welcome to the Gallery of Books</h1>
+  </div>
+  <div id="second"><button id="Create">Add</button></div>
+</div>
+
+<div id="loading" *ngIf="loading">
+  <h1>Loading...</h1>
+</div>
+
+<!-- books.component.html -->
+
+<div class="books-container">
+  <div *ngFor="let book of books" class="book-item">
+    <div class="book-container">
+      <img [src]="book.image" [alt]="book.title" class="book-image" />
+      <div class="book-details">
+        <h3 class="book-title">{{ book.title }}</h3>
+        <p class="book-author">By {{ book.author }}</p>
+        <p class="book-description">{{ book.description }}</p>
+        <p class="book-genre">{{ book.genre }}</p>
+        <p class="book-price">$ {{ book.price }}</p>
+        <div class="book-reviews">
+          <h4>Reviews:</h4>
+          <ul>
+            <li *ngFor="let review of book.review">
+              {{ review.rating }} stars - {{ review.comment }}
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="isAdminUser()" class="admin-actions">
+          <button class="btn btn-info">Edit</button>
+          <button (click)="deleteBook(book)" class="btn btn-danger">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <app-footer></app-footer>

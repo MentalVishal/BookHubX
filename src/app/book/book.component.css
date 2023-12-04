@@ -1,0 +1,149 @@
+#heading h1 {
+  margin: 2%;
+  text-align: center;
+  color: rgb(188, 134, 35);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#Create {
+  width: 100px;
+  height: 40px;
+  padding: 1%;
+  font-size: 1.2rem;
+  color: rgb(104, 76, 76);
+  border-radius: 3px;
+  background-color: brown;
+  color: white;
+}
+
+#Create:hover {
+  background-color: rgb(250, 41, 41);
+  color: rgb(255, 255, 255);
+}
+
+#first {
+  width: 70%;
+}
+
+#loading {
+  margin: 3%;
+  color: brown;
+  text-align: center;
+}
+
+/* books.component.css */
+
+.admin-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-info {
+  background-color: #5bc0de;
+  color: #fff;
+  border: 1px solid #46b8da;
+}
+
+.btn-info:hover {
+  background-color: #46b8da;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+  color: #fff;
+  border: 1px solid #d43f3a;
+}
+
+.btn-danger:hover {
+  background-color: #d43f3a;
+}
+
+/* book.component.css */
+
+.books-container {
+  margin: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.book-item {
+  flex: 0 0 calc(33.33% - 20px); /* Three books in one line with 20px margin */
+  margin-bottom: 20px;
+}
+
+.book-container {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-image {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.book-details {
+  flex: 1;
+}
+
+.book-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.book-author {
+  font-style: italic;
+  color: #555;
+}
+
+.book-description {
+  margin-bottom: 10px;
+}
+
+.book-genre {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.book-price {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.book-reviews {
+  margin-top: 20px;
+}
+
+.book-reviews h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.book-reviews ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.book-reviews li {
+  margin-bottom: 5px;
+}

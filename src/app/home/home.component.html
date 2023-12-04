@@ -1,2 +1,50 @@
-<app-navbar></app-navbar> <br /><br /><br /><br /><br />
+<app-navbar></app-navbar> <br />
+
+<div>
+  <div id="welcome">
+    <p>Welcome {{ name }}</p>
+  </div>
+</div>
+
+<div id="heading">
+  <div id="first">
+    <h1>Welcome to the Homepage</h1>
+  </div>
+</div>
+
+<div id="loading" *ngIf="loading">
+  <h1>Loading...</h1>
+</div>
+
+<!-- books.component.html -->
+
+<div class="container mt-4">
+  <div class="row">
+    <div *ngFor="let book of books" class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img [src]="book.image" [alt]="book.title" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }}</h5>
+          <p class="card-text">By {{ book.author }}</p>
+          <p class="card-text">{{ book.description }}</p>
+          <p class="card-text">
+            <small class="text-muted">{{ book.genre }}</small>
+          </p>
+          <p class="card-text">$ {{ book.price }}</p>
+          <div class="book-reviews">
+            <h6>Reviews:</h6>
+            <ul class="list-unstyled">
+              <li *ngFor="let review of book.review">
+                {{ review.rating }} stars - {{ review.comment }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button (click)="clickBook()" class="btn btn-sm btn-info">Show More</button>
+
 <app-footer></app-footer>

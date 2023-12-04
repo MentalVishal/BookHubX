@@ -32,3 +32,12 @@
 #first {
   width: 70%;
 }
+
+#maindiv {
+  cursor: pointer;
+}
+#loading {
+  margin: 3%;
+  color: brown;
+  text-align: center;
+}

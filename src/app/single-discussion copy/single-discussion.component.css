@@ -1,0 +1,90 @@
+#heading h1 {
+  margin: 2%;
+  text-align: center;
+  color: rgb(188, 134, 35);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#first {
+  width: 70%;
+}
+/* single-discussion.component.css */
+
+.discussion-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.discussion-card {
+  width: 500px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.discussion-header {
+  cursor: pointer;
+}
+
+.discussion-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.discussion-info {
+  color: #777;
+}
+
+.discussion-content {
+  margin-bottom: 20px;
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment-item {
+  margin-bottom: 8px;
+}
+
+.comment-user {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.comment-input {
+  display: flex;
+  align-items: center;
+}
+
+.comment-text {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.comment-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

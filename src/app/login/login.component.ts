@@ -55,7 +55,16 @@ export class LoginComponent {
           alert('User doesnt exist, please register.');
         } else {
           const token = response.Token;
+          const name = response.User.name;
+          const role = response.User.role;
+          const id = response.User._id;
+
           localStorage.setItem('Token', token);
+          localStorage.setItem('Name', name);
+          localStorage.setItem('Role', role);
+          localStorage.setItem('Id', id);
+
+          console.log(response);
 
           alert('Login Successful');
           this.isSubmitted = true;

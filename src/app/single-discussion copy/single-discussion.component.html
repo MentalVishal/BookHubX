@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div id="heading">
+  <div id="first">
+    <h1>Welcome to the Community Discussions</h1>
+  </div>
+</div>
+<!-- single-discussion.component.html -->
+
+<div class="discussion-container" *ngFor="let discussions of discussions">
+  <div class="discussion-card">
+    <div class="discussion-header" (click)="toggleCommentBox()">
+      <h1 class="discussion-title">{{ discussions.title }}</h1>
+      <p class="discussion-info">
+        Posted by <span class="user-name">{{ discussions.userName }}</span>
+      </p>
+    </div>
+    <div class="discussion-content">
+      <p>{{ discussions.content }}</p>
+    </div>
+    <div class="discussion-comments">
+      <ul class="comment-list">
+        <li *ngFor="let message of discussions.message" class="comment-item">
+          <span class="comment-user">{{ message.userName }}:</span>
+          {{ message.text }}
+        </li>
+      </ul>
+      <div class="comment-input">
+        <input
+          type="text"
+          class="comment-text"
+          placeholder="Add your comment"
+          [(ngModel)]="newCommentText"
+        />
+        <button class="comment-button" (click)="addComment()">Comment</button>
+      </div>
+    </div>
+  </div>
+</div>
