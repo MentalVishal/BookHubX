@@ -39,6 +39,10 @@ export class BookComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
+    if (!this.token) {
+      this.router.navigate(['/login']);
+    }
+
     const headers = new HttpHeaders().set(
       'Authorization',
       `Bearer ${this.token}`
